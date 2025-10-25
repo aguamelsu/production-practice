@@ -7,7 +7,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load pre-trained model
-with open('/workspaces/production-practice/models/iris_models.pkl', 'rb') as file:
+with open('../models/iris_models.pkl', 'rb') as file:
     artifact = pickle.load(file)
 
 @app.route('/', methods=['GET', 'POST'])
