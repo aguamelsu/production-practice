@@ -7,12 +7,13 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load pre-trained model
-with open('../models/iris_models.pkl', 'rb') as file:
+with open('/workspaces/production-practice/models/iris_models.pkl', 'rb') as file:
     artifact = pickle.load(file)
 
 @app.route('/', methods=['GET', 'POST'])
 
 def prediction():
+    # Homework: validate each value with ratios 
     if request.method == 'POST':
         val1 = float(request.form['val1'])
         val2 = float(request.form['val2'])
